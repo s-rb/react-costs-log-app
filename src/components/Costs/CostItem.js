@@ -3,7 +3,7 @@ import "../UI/Card.css";
 import CostDate from "./CostDate";
 import Card from "../UI/Card";
 
-function CostItem(props) {
+const CostItem = (props) => {
 
     const costDate = props.date;
     const costDescription = props.description;
