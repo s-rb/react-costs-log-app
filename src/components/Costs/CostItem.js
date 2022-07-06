@@ -1,5 +1,7 @@
 import './CostItem.css';
+import "../UI/Card.css";
 import CostDate from "./CostDate";
+import Card from "../UI/Card";
 
 function CostItem(props) {
 
@@ -8,13 +10,13 @@ function CostItem(props) {
     const costPrice = props.amount;
 
     return (
-        <div className="cost-item">
+        <Card className="cost-item">
             <CostDate date={costDate}></CostDate>
             <div className='cost-item__description'>
                 <h2>{costDescription}</h2>
                 <div className='cost-item__price'>${costPrice}</div>
             </div>
-        </div>);
+        </Card>);
 }
 
 export default CostItem;
