@@ -52,8 +52,8 @@ const CostForm = (props) => {
         event.preventDefault(); // Предотвратить обновление страницы после сабмита формы
 
         const costData = {
-            name: inputName,
-            amount: inputAmount,
+            description: inputName,
+            price: inputAmount,
             date: new Date(inputDate),
         }
 

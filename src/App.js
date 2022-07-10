@@ -1,26 +1,32 @@
 import Costs from "./components/Costs/Costs";
-import React from "react";
+import React, {useState} from "react";
 import NewCost from "./components/NewCost/NewCost";
+
+const INITIAL_COSTS = [
+    {
+        id: "123",
+        date: new Date(2021, 2, 12),
+        description: 'Холодильник',
+        price: 999.99
+    },
+    {
+        id: "124",
+        date: new Date(2021, 3, 15),
+        description: 'Макбук',
+        price: 1500
+    },
+    {
+        id: "125",
+        date: new Date(2021, 2, 14),
+        description: 'Джинсы',
+        price: 50
+    }
+];
 
 // function App() {
 const App = () => {
-    const costs = [
-        {
-            date: new Date(2021, 2, 12),
-            description: 'Холодильник',
-            price: 999.99
-        },
-        {
-            date: new Date(2021, 3, 15),
-            description: 'Макбук',
-            price: 1500
-        },
-        {
-            date: new Date(2021, 2, 14),
-            description: 'Джинсы',
-            price: 50
-        }
-    ];
+
+    const [costs, setCosts] = useState(INITIAL_COSTS)
 
     // можно так создавать - так работает под капотом
     // return React.createElement("div",
@@ -33,6 +39,10 @@ const App = () => {
     const addCostHandler = (cost) => {
         console.log(cost)
         console.log('App component')
+        // setCosts([cost, ...costs]); // так неправильно, чтобы получать последнее состояние надо через функцию
+        setCosts(prevCosts => {
+            return [cost, ...prevCosts]
+        }); // так неправильно, чтобы получать последнее состояние надо через функцию
     }
 
     return (
