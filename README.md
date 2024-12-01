@@ -12,4 +12,4 @@
 - ReactJS library, 
 - Html, Css
 
-#### Demo link is available: [Try me!](http://costs-log.surkoff.com/)
+#### Demo link is available: [Try me!](http://costs-log.surkoff.su/)
